@@ -1,0 +1,29 @@
+﻿@model PayrollWeb.Models.ManageResourceModel
+@{
+    ViewData["Title"] = "Hire/Terminate";
+}
+<h1>Manage Employees - @Model.CompanyName</h1>
+<hr />
+<div class="container-fluid">
+    <form asp-controller="Company" >
+        <input type="hidden" asp-for="CompanyId"/>
+        <div class="row">
+            <div class="col-sm-auto">
+                <label>Available</label>
+                <select asp-for="All.SelectedItemId" asp-items="@Model.All.Items" class="form-control" size="10"></select>
+            </div>
+            <div class="col-sm-auto align-self-center">
+                <div class="container text-center">
+                    <input asp-controller="Employee" asp-action="Hire" type="submit" class="btn btn-outline-primary" value="  Hire -> "/>
+                    <br />
+                    <input asp-controller="Employee" asp-action="Terminate" type="submit" class="btn btn-outline-secondary" value="<- Terminate" />
+                </div>
+            </div>
+            <div class="col-sm-auto">
+                <label>Employed</label>
+                <select asp-for="Hired.SelectedItemId" asp-items="@Model.Hired.Items" class="form-control" size="10">                   
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+﻿@model PayrollWeb.Models.GenericListModel
+@{
+    ViewData["Title"] = "Employee Details";
+}
+<div class="row">
+    <div class="col-sm-auto">
+        <select asp-for="SelectedItemId" asp-items="@Model.Items" class="form-control" size="10" onchange="empChange(this)">
+            <option value="-1">Add new</option>
+        </select>
+    </div>
+    <div class="container border" id="empId">
+        <partial name="_EmployeeDetailPartial" model="ViewBag.Emp"/>
+    </div>
+</div>

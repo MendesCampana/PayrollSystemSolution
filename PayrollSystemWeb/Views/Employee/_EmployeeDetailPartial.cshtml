@@ -1,0 +1,33 @@
+﻿@model PayrollWeb.Models.EmployeeDetailModel
+
+<form asp-controller="Employee" asp-action="SaveEmployeeDetails" asp-route-id="@Model.Id">
+    <div class="row align-content-md-start">
+        <div class="col form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="col form-group">
+            <label asp-for="Lastname"></label>
+            <input asp-for="Lastname" />
+            <span asp-validation-for="Lastname"></span>
+        </div>
+    </div>
+    <div class="row align-content-md-start">
+        <div class="col form-group">
+            <label asp-for="EmpId"></label>
+            <input asp-for="EmpId" />
+            <span asp-validation-for="EmpId"></span>
+        </div>
+        <div class="col form-group">
+            <label asp-for="Salary"></label>
+            <input asp-for="Salary" />
+            <span asp-validation-for="Salary"></span>
+        </div>
+    </div>
+    <div class="row align-content-md-start">
+        <div class="col">
+            <input type="submit" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

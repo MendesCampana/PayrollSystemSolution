@@ -1,0 +1,29 @@
+﻿@model PayrollWeb.Models.CompanyDetailViewModel
+
+  <form asp-controller="Company" asp-action="SaveDetail" asp-route-id="@Model.Id">
+        <div class="row">
+            <div class="form-group col-sm">
+                <label asp-for="TaxId"></label>
+                <input asp-for="TaxId" class="form-control">
+                <span asp-validation-for="TaxId"></span>
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group col-sm">
+                <label asp-for="StreetAddress"></label>
+                <input asp-for="StreetAddress" class="form-control">
+                <span asp-validation-for="StreetAddress"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="submit" class="btn btn-primary" />
+            </div>
+            <div class="col-sm">
+                <a asp-controller="Company" asp-action="ManageResources" asp-route-id="@Model.Id" class="btn btn-primary">Manage Resources</a>
+            </div>
+        </div>
+    </form>
